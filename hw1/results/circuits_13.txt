@@ -1,0 +1,24 @@
+Process 0 is done
+There are 9 different solutions
+Process 6 is done
+3) 0110111111011001
+Process 3 is done
+2) 1010111111011001
+Process 2 is done
+Process 5 is done
+4) 1110111111011001
+Process 4 is done
+7) 1010111110111001
+Process 7 is done
+Process 1 is done
+8) 0110111110111001
+Process 8 is done
+11) 0110111110011001
+Process 11 is done
+10) 1010111110011001
+Process 10 is done
+12) 1110111110011001
+Process 12 is done
+9) 1110111110111001
+Process 9 is done
+Executed in 0.001237 seconds

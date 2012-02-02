@@ -1,0 +1,6 @@
+n is 10000000000
+Process 0 is done
+The value of Pi is: 3.1415926535897931159980e+00
+My result is 6.2597620704039045859797e-10
+Difference between Pi and my calculation is: 3.1415926529638169089308e+00
+Executed in 299 seconds

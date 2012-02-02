@@ -1,0 +1,17 @@
+1) 1110111110011001
+1) 1010111111011001
+Process 1 is done
+0) 0110111110011001
+Process 0 is done
+There are 9 different solutions
+2) 0110111111011001
+Process 2 is done
+3) 1110111111011001
+3) 1010111110111001
+Process 3 is done
+5) 1010111110011001
+5) 1110111110111001
+Process 5 is done
+4) 0110111110111001
+Process 4 is done
+Executed in 0.002353 seconds

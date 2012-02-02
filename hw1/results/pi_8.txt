@@ -1,0 +1,13 @@
+n is 10000000000
+Process 7 is done
+Process 3 is done
+Process 5 is done
+Process 4 is done
+Process 2 is done
+Process 0 is done
+Process 6 is done
+The value of Pi is: 3.1415926535897931159980e+00
+My result is 6.2597620708361109620122e-10
+Difference between Pi and my calculation is: 3.1415926529638169089308e+00
+Process 1 is done
+Executed in 86 seconds
