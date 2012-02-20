@@ -1,7 +1,7 @@
 #include <mpi.h>
 #include <math.h>
 #include <stdio.h>
-#include "MyMPI.h"
+#include <stdlib.h>
 #define MIN(a,b)  ((a)<(b)?(a):(b))
 #define BLOCK_LOW(id,p,n)  ((id)*(n)/(p))
 
@@ -9,14 +9,30 @@
         ( BLOCK_LOW((id)+1,p,n)-1 ) 
 
 #define BLOCK_SIZE(id,p,n) \
-        (BLOCK_LOW( (id)+1, p, n) -  
-         BLOCK_LOW( (id), p, n  ) )
+        (BLOCK_LOW( (id)+1, p, n) - BLOCK_LOW( (id), p, n) )
 
 #define BLOCK_OWNER(index,p,n) \
         ( ( ((p)*(index)+1)-1 ) / (n) )
 
 int main (int argc, char *argv[])
 {
+  //define variables
+  int n;
+  double elapsed_time;
+  int p;
+  int id;
+  int low_value;
+  int high_value;
+  int size;
+  int proc0_size;
+  char* marked;
+  int index;
+  int prime;
+  int first;
+  int count;
+  int global_count;
+  int i;
+
   //Initialize MPI
   MPI_Init (&argc, &argv);
   MPI_Barrier(MPI_COMM_WORLD);
@@ -27,7 +43,8 @@ int main (int argc, char *argv[])
   //Check for proper command line parameters, must include N
   if (argc != 2) {
       if (!id) printf ("Command line: %s <m>\n", argv[0]);
-      MPI_Finalize(); exit (1);
+      MPI_Finalize();
+      exit(1);
   }
 
   //Convert parameter string to integer
