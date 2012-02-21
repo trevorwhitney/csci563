@@ -36,6 +36,7 @@ int main (int argc, char *argv[])
   int global_count;
   int i;
   int local_index;
+  int first_index;
 
   //Initialize MPI
   MPI_Init (&argc, &argv);
@@ -63,7 +64,7 @@ int main (int argc, char *argv[])
   size = BLOCK_SIZE(id,p,n-1);
 
   //remove even integers
-  array_size = ceil((float)size/2);
+  array_size = size/2;
   
   //largest prime is sqrt(n), so first processor has all primes if
   //p is less than sqrt(n). We need to check we don't have more processors
@@ -92,12 +93,22 @@ int main (int argc, char *argv[])
   //first prime is 3
   prime = 3;
   do {
-    printf("New prime is %d\n", prime);
-    if (prime * prime > low_value)
-       first = ceil((float)(prime*prime)/2) - 2;
+    //printf("New prime is %d\n", prime);
+    if (prime * prime > low_value) {
+      first_index = ceil((float)prime/2) - 2;
+      first = prime + first_index;
+    }
     else {
+        //PROBLEM IS HERE
        if (!(low_value % prime)) first = 0;
-       else first = (prime - (low_value % prime))/2;
+       else {
+         for (i = 0; i < array_size; i++) {
+           if ((low_value + i*2) % prime == 0) {
+             first = i;
+             break;
+           }
+         }
+       }
     }
 
     //printf("ID: %d, size: %d, array_size: %d, low value: %d, high value: %d\n", id, size, array_size, low_value, high_value);
@@ -124,6 +135,8 @@ int main (int argc, char *argv[])
     if (!marked[i]) count++;
     //printf("ID: %d, Location %d is %d\n", id, i, marked[i]);
   }
+
+  //printf("ID: %d, local count: %d\n", id, count);
   
   //Sum count of primes from each process
   MPI_Reduce (&count, &global_count, 1, MPI_INT, MPI_SUM,
@@ -136,6 +149,7 @@ int main (int argc, char *argv[])
        global_count + 1, n);
     printf ("Total elapsed time: %10.6f\n", elapsed_time);
   }
+  free(marked);
   MPI_Finalize();
   return 0;
 }
