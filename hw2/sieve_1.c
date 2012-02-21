@@ -4,10 +4,10 @@
 #include <stdlib.h>
 #define MIN(a,b)  ((a)<(b)?(a):(b))
 
-#define BLOCK_LOW(id,p,n)  ((id)*(n)/(p))
+#define BLOCK_LOW(id,p,n)  (( (id)*(n)/(p) % 2 == 0)?( ((id)*(n)/(p)) ):( (id)*(n)/(p) - 1 ))
 
 #define BLOCK_HIGH(id,p,n) \
-        ( BLOCK_LOW((id)+1,p,n)-2 ) 
+        ( ((BLOCK_LOW((id)+1,p,n)-2) % 2 == 0)?((BLOCK_LOW((id)+1,p,n)-2)):((BLOCK_LOW((id)+1,p,n)-2) - 1) ) 
 
 #define BLOCK_SIZE(id,p,n) \
         (BLOCK_LOW( (id)+1, p, n) - BLOCK_LOW( (id), p, n) )
@@ -15,6 +15,8 @@
 #define BLOCK_OWNER(index,p,n) \
         ( ( ((p)*(index)+1)-1 ) / (n) )
 #define ARRAY_INDEX(i, prime, iteration) (i - iteration*prime)
+#define GLOBAL_TO_LOCAL(value, low_value) \
+        ( (ceil((float)value/2) - 2) - (ceil((float)low_value/2) - 2) )
 
 int main (int argc, char *argv[])
 {
@@ -35,9 +37,6 @@ int main (int argc, char *argv[])
   int count;
   int global_count;
   int i;
-  int local_index;
-  int first_index;
-  int global_index;
   int value;
   int mod_prime;
 
@@ -61,9 +60,7 @@ int main (int argc, char *argv[])
 
   //Low and high values for each processor, from 3 to n
   low_value = 3 + BLOCK_LOW(id,p,n-1);
-  if (low_value % 2 == 0) low_value -= 1;
   high_value = 3 + BLOCK_HIGH(id,p,n-1);
-  if (high_value % 2 == 0) high_value -= 1;
   size = BLOCK_SIZE(id,p,n-1);
 
   //remove even integers
@@ -93,45 +90,35 @@ int main (int argc, char *argv[])
   
   if (!id) index = 0;
   
-  //first prime is 3
+  //first prime is 3, since we're skipping 2
   prime = 3;
   do {
-    //printf("New prime is %d\n", prime);
     if (prime * prime > low_value) {
-      first_index = ceil((float)prime/2) - 2;
-      first = prime + first_index;
+      //If low_value is less than prime*prime, then we need to start at prime*prime
+      first = GLOBAL_TO_LOCAL(prime*prime, low_value);
     }
     else {
-        //PROBLEM IS HERE
        if (!(low_value % prime)) first = 0;
        else {
-         /*for (i = 0; i < array_size; i++) {
-           if ((low_value + i*2) % prime == 0) {
-             first = i;
-             break;
-           }
-         } */
          mod_prime = low_value % prime;
          if (mod_prime % 2 == 0) value = low_value - mod_prime + 2*prime;
          else value = low_value - mod_prime + prime;
-         global_index = ceil((float)value/2) - 2;
-         first = global_index - (ceil((float)low_value/2) - 2);
-         printf("ID: %d, Prime: %d, Value: %d, Global Index: %d, Low: %d, Local Index: %d\n", id, prime, value, global_index, low_value, first);
+         first = GLOBAL_TO_LOCAL(value, low_value);
        }
     }
 
-    //printf("ID: %d, size: %d, array_size: %d, low value: %d, high value: %d\n", id, size, array_size, low_value, high_value);
-
-    //increment by prime, marking the non-primes with 1, or true
-    //printf("ID: %d, Starting at %d\n", id, first);
+    //increment by prime, marking the non-primes with 1, or 'marked'
     for (i = first; i < array_size; i += prime) {
       marked[i] = 1;
-      //printf("ID: %d, Marking local array at %d as not prime\n", id, i);
     }
+
+    //calculate new prime on id 0
     if (!id) {
        while (marked[++index]);
        prime = index*2 + 3;
     }
+
+    //broadcast new prime to other processors
     MPI_Bcast (&prime,  1, MPI_INT, 0, MPI_COMM_WORLD);
   } while (prime * prime <= n);
   /* End Sieve of Eratosthenes Algorithm */
@@ -142,22 +129,24 @@ int main (int argc, char *argv[])
   //for all elements in block, if prime is 1/true, increment count
   for (i = 0; i < array_size; i++) {
     if (!marked[i]) count++;
-    //printf("ID: %d, Location %d is %d\n", id, i, marked[i]);
   }
-
-  //printf("ID: %d, local count: %d\n", id, count);
   
   //Sum count of primes from each process
   MPI_Reduce (&count, &global_count, 1, MPI_INT, MPI_SUM,
     0, MPI_COMM_WORLD);
   elapsed_time += MPI_Wtime();
+
+  //add one for 2, which is the only even prime we skipped
+  global_count += 1;
   
   //print results on main processor
   if (!id) {
     printf ("%d primes are less than or equal to %d\n",
-       global_count + 1, n);
+       global_count, n);
     printf ("Total elapsed time: %10.6f\n", elapsed_time);
   }
+
+  //free memory and finish
   free(marked);
   MPI_Finalize();
   return 0;
