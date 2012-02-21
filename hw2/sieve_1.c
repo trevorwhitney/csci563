@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MIN(a,b)  ((a)<(b)?(a):(b))
-#define MAX(a,b)  ((a)<(b)?(b):(a))
+
 #define BLOCK_LOW(id,p,n)  ((id)*(n)/(p))
 
 #define BLOCK_HIGH(id,p,n) \
-        ( BLOCK_LOW((id)+1,p,n)-1 ) 
+        ( BLOCK_LOW((id)+1,p,n)-2 ) 
 
 #define BLOCK_SIZE(id,p,n) \
         (BLOCK_LOW( (id)+1, p, n) - BLOCK_LOW( (id), p, n) )
@@ -57,11 +57,13 @@ int main (int argc, char *argv[])
 
   //Low and high values for each processor, from 3 to n
   low_value = 3 + BLOCK_LOW(id,p,n-1);
+  if (low_value % 2 == 0) low_value -= 1;
   high_value = 3 + BLOCK_HIGH(id,p,n-1);
+  if (high_value % 2 == 0) high_value -= 1;
   size = BLOCK_SIZE(id,p,n-1);
 
   //remove even integers
-  array_size = ceil(size/2) - 1;
+  array_size = ceil((float)size/2);
   
   //largest prime is sqrt(n), so first processor has all primes if
   //p is less than sqrt(n). We need to check we don't have more processors
@@ -90,22 +92,25 @@ int main (int argc, char *argv[])
   //first prime is 3
   prime = 3;
   do {
+    printf("New prime is %d\n", prime);
     if (prime * prime > low_value)
-       first = prime * prime - low_value;
+       first = ceil((float)(prime*prime)/2) - 2;
     else {
        if (!(low_value % prime)) first = 0;
-       else first = prime - (low_value % prime);
+       else first = (prime - (low_value % prime))/2;
     }
 
+    //printf("ID: %d, size: %d, array_size: %d, low value: %d, high value: %d\n", id, size, array_size, low_value, high_value);
+
     //increment by prime, marking the non-primes with 1, or true
-    for (i = first; i < size; i += 2*prime) {
-      //translate i into array index
-      local_index = floor(i/2) - 2;
-      marked[local_index] = 1;
+    //printf("ID: %d, Starting at %d\n", id, first);
+    for (i = first; i < array_size; i += prime) {
+      marked[i] = 1;
+      //printf("ID: %d, Marking local array at %d as not prime\n", id, i);
     }
     if (!id) {
        while (marked[++index]);
-       prime = index + 3;
+       prime = index*2 + 3;
     }
     MPI_Bcast (&prime,  1, MPI_INT, 0, MPI_COMM_WORLD);
   } while (prime * prime <= n);
@@ -115,8 +120,10 @@ int main (int argc, char *argv[])
   count = 0;
 
   //for all elements in block, if prime is 1/true, increment count
-  for (i = 0; i < array_size; i++)
+  for (i = 0; i < array_size; i++) {
     if (!marked[i]) count++;
+    //printf("ID: %d, Location %d is %d\n", id, i, marked[i]);
+  }
   
   //Sum count of primes from each process
   MPI_Reduce (&count, &global_count, 1, MPI_INT, MPI_SUM,
