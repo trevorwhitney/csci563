@@ -37,6 +37,9 @@ int main (int argc, char *argv[])
   int i;
   int local_index;
   int first_index;
+  int global_index;
+  int value;
+  int mod_prime;
 
   //Initialize MPI
   MPI_Init (&argc, &argv);
@@ -102,12 +105,18 @@ int main (int argc, char *argv[])
         //PROBLEM IS HERE
        if (!(low_value % prime)) first = 0;
        else {
-         for (i = 0; i < array_size; i++) {
+         /*for (i = 0; i < array_size; i++) {
            if ((low_value + i*2) % prime == 0) {
              first = i;
              break;
            }
-         }
+         } */
+         mod_prime = low_value % prime;
+         if (mod_prime % 2 == 0) value = low_value - mod_prime + 2*prime;
+         else value = low_value - mod_prime + prime;
+         global_index = ceil((float)value/2) - 2;
+         first = global_index - (ceil((float)low_value/2) - 2);
+         printf("ID: %d, Prime: %d, Value: %d, Global Index: %d, Low: %d, Local Index: %d\n", id, prime, value, global_index, low_value, first);
        }
     }
 
