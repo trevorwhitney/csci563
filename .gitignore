@@ -1,5 +1,7 @@
 /hw1/circuits
 /hw1/parallel_pi
+/hw1/.fuse*
 /hw2/sieve_0
 /hw2/sieve_1
 /hw2/sieve_2
+/hw2/.fuse*
