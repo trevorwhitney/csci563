@@ -149,6 +149,7 @@ char* allocate_memory(int size) {
   char* marked;
   int i;
   
+  printf("Asking for malloc of size: %d\n", size);
   marked = (char *) malloc (size);
   if (marked == NULL) {
     printf ("Cannot allocate enough memory\n");
