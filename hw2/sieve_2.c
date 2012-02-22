@@ -28,7 +28,7 @@ void processor_count_check(int, int, int);
 char* allocate_memory(int);
 void find_first_index(int*, int, int);
 int count_local_primes(char*, int);
-int* discover_primes(int, int*);
+void discover_primes(int, int*, int*);
 
 
 int main (int argc, char *argv[])
@@ -69,11 +69,11 @@ int main (int argc, char *argv[])
   //N represents the number up to which we need to calculate primes
   n = atoi(argv[1]);
 
-  //Add a function call to discover primes
-  primes = discover_primes(n, &num_primes);
-
   decompose_data(id, p, n, &low_value, &high_value, &size);
   processor_count_check(p, n, id);
+
+  primes = (int*) malloc(size/2);
+  discover_primes(n, &num_primes, primes);
 
   /* Begin Sieve of Eratosthenes Algorithm */
   marked = allocate_memory(size);
@@ -82,7 +82,7 @@ int main (int argc, char *argv[])
   //first prime is 3, since we're skipping 2
   prime = primes[index++];
   do {
-    printf("Prime: %d at index: %d\n", prime, index);
+    //printf("Prime: %d at index: %d\n", prime, index);
     find_first_index(&first, prime, low_value);
 
     //increment by prime, marking the non-primes with 1, or 'marked'
@@ -111,9 +111,9 @@ int main (int argc, char *argv[])
   }
 
   //free memory and finish
-  //free(marked);
-  //free(primes);
-  //MPI_Finalize();
+  free(marked);
+  free(primes);
+  MPI_Finalize();
   return 0;
 }
 
@@ -196,8 +196,7 @@ int count_local_primes(char* marked, int size) {
   return count;
 }
 
-int* discover_primes(int n, int* remote_num_primes) {
-  int* primes;
+void discover_primes(int n, int* remote_num_primes, int* primes) {
   char* marked;
   int prime;
   int index;
@@ -241,7 +240,6 @@ int* discover_primes(int n, int* remote_num_primes) {
   } while (prime * prime <= n);
 
   //4. The unmarked numbers are primes, store in an array
-  primes = (int *) malloc(num_primes);
   counter = 0;
 
   for (index = 0; index < array_size; index++) {
@@ -252,7 +250,5 @@ int* discover_primes(int n, int* remote_num_primes) {
   }
 
   *remote_num_primes = num_primes;
-
-  return primes;
   
 }
