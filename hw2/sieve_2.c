@@ -28,7 +28,7 @@ void processor_count_check(int, int, int);
 char* allocate_memory(int);
 void find_first_index(int*, int, int);
 int count_local_primes(char*, int);
-char* discover_primes(int);
+int* discover_primes(int);
 
 
 int main (int argc, char *argv[])
@@ -48,7 +48,7 @@ int main (int argc, char *argv[])
   int count;
   int global_count;
   int i;
-  char* primes;
+  int* primes;
 
   //Initialize MPI
   MPI_Init (&argc, &argv);
@@ -81,6 +81,7 @@ int main (int argc, char *argv[])
   //first prime is 3, since we're skipping 2
   prime = primes[index++];
   do {
+    printf("Prime: %d at index: %d\n", prime, index);
     find_first_index(&first, prime, low_value);
 
     //increment by prime, marking the non-primes with 1, or 'marked'
@@ -193,8 +194,8 @@ int count_local_primes(char* marked, int size) {
   return count;
 }
 
-char* discover_primes(int n) {
-  char* primes;
+int* discover_primes(int n) {
+  int* primes;
   char* marked;
   int prime;
   int index;
@@ -238,7 +239,7 @@ char* discover_primes(int n) {
   } while (prime * prime <= n);
 
   //4. The unmarked numbers are primes, store in an array
-  primes = (char *) malloc(num_primes);
+  primes = (int *) malloc(num_primes);
   counter = 0;
 
   for (index = 0; index < array_size; index++) {
