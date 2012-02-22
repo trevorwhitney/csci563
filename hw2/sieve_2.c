@@ -111,8 +111,9 @@ int main (int argc, char *argv[])
   }
 
   //free memory and finish
-  free(marked);
-  MPI_Finalize();
+  //free(marked);
+  //free(primes);
+  //MPI_Finalize();
   return 0;
 }
 
