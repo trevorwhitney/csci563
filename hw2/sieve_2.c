@@ -28,7 +28,7 @@ void processor_count_check(int, int, int);
 char* allocate_memory(int);
 void find_first_index(int*, int, int);
 int count_local_primes(char*, int);
-int* discover_primes(int);
+int* discover_primes(int, int*);
 
 
 int main (int argc, char *argv[])
@@ -49,6 +49,7 @@ int main (int argc, char *argv[])
   int global_count;
   int i;
   int* primes;
+  int num_primes;
 
   //Initialize MPI
   MPI_Init (&argc, &argv);
@@ -69,7 +70,7 @@ int main (int argc, char *argv[])
   n = atoi(argv[1]);
 
   //Add a function call to discover primes
-  primes = discover_primes(n);
+  primes = discover_primes(n, &num_primes);
 
   decompose_data(id, p, n, &low_value, &high_value, &size);
   processor_count_check(p, n, id);
@@ -88,7 +89,7 @@ int main (int argc, char *argv[])
     for (i = first; i < size; i += prime) marked[i] = 1;
 
     prime = primes[index++];
-  } while (prime * prime <= n);
+  } while (index <= num_primes);
   /* End Sieve of Eratosthenes Algorithm */
 
   
@@ -194,7 +195,7 @@ int count_local_primes(char* marked, int size) {
   return count;
 }
 
-int* discover_primes(int n) {
+int* discover_primes(int n, int* remote_num_primes) {
   int* primes;
   char* marked;
   int prime;
@@ -248,6 +249,8 @@ int* discover_primes(int n) {
       primes[counter++] = prime;
     }
   }
+
+  *remote_num_primes = num_primes;
 
   return primes;
   
