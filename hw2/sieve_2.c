@@ -76,25 +76,17 @@ int main (int argc, char *argv[])
 
   /* Begin Sieve of Eratosthenes Algorithm */
   marked = allocate_memory(size);
-  if (!id) index = 0;
+  index = 0;
   
   //first prime is 3, since we're skipping 2
-  prime = 3;
+  prime = primes[index++];
   do {
     find_first_index(&first, prime, low_value);
 
     //increment by prime, marking the non-primes with 1, or 'marked'
-    for (i = first; i < size; i += prime) {
-      marked[i] = 1;
-    }
+    for (i = first; i < size; i += prime) marked[i] = 1;
 
-    //calculate new prime on id 0
-    if (!id) {
-       while (marked[++index]);
-       prime = INDEX_TO_VALUE(index);
-    }
-    //broadcast new prime to other processors
-    MPI_Bcast (&prime,  1, MPI_INT, 0, MPI_COMM_WORLD);
+    prime = primes[index++];
   } while (prime * prime <= n);
   /* End Sieve of Eratosthenes Algorithm */
 
@@ -216,7 +208,6 @@ char* discover_primes(int n) {
   //use sequential algorithm to find primes from 3 to sqrt(n)
   size = sqrt((double) n);
   array_size = ceil((float)size/2) - 1;
-  printf("Size is %d, with array size of %d\n", size, array_size);
 
   //1. create a list of natural, odd numbers, up to sqrt(n), all unmarked
   marked = allocate_memory(array_size);
@@ -239,34 +230,22 @@ char* discover_primes(int n) {
     find_first_index(&first, prime, 3);
 
     //increment by prime, marking the non-primes with 1, or 'marked'
-    for (i = first; i < array_size; i += prime) {
-      printf("First: %d\n", first);
-      marked[i] = 1;
-      printf("Marking %d at location %d as not prime\n", INDEX_TO_VALUE(i), i);
-    }
+    for (i = first; i < array_size; i += prime) marked[i] = 1;
 
     while (marked[++index]);
     prime = INDEX_TO_VALUE(index);
 
   } while (prime * prime <= n);
 
-  printf("Found %d primes under %d\n", num_primes, size);
-
   //4. The unmarked numbers are primes, store in an array
-
   primes = (char *) malloc(num_primes);
   counter = 0;
 
   for (index = 0; index < array_size; index++) {
     if(!marked[index]) {
       prime = INDEX_TO_VALUE(index);
-      printf("Prime #%d: %d\n", index, prime);
       primes[counter++] = prime;
     }
-  }
-
-  for (i = 0; i < num_primes; i++) {
-    printf("primes[%d] = %d\n", i, primes[i]);
   }
 
   return primes;
