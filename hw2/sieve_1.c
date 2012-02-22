@@ -19,6 +19,8 @@
 #define ARRAY_INDEX(i, prime, iteration) (i - iteration*prime)
 #define GLOBAL_TO_LOCAL(value, low_value) \
         ( (ceil((float)value/2) - 2) - (ceil((float)low_value/2) - 2) )
+#define INDEX_TO_VALUE(index) \
+        ( index*2 + 3 )
 
 //function prototypes
 void decompose_data(int, int, int, int*, int*, int*);
@@ -77,14 +79,12 @@ int main (int argc, char *argv[])
     find_first_index(&first, prime, low_value);
 
     //increment by prime, marking the non-primes with 1, or 'marked'
-    for (i = first; i < size; i += prime) {
-      marked[i] = 1;
-    }
+    for (i = first; i < size; i += prime) marked[i] = 1;
 
     //calculate new prime on id 0
     if (!id) {
        while (marked[++index]);
-       prime = index*2 + 3;
+       prime = INDEX_TO_VALUE(index);
     }
     //broadcast new prime to other processors
     MPI_Bcast (&prime,  1, MPI_INT, 0, MPI_COMM_WORLD);
