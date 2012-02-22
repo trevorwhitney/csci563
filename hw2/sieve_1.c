@@ -115,6 +115,7 @@ int main (int argc, char *argv[])
   return 0;
 }
 
+
 void decompose_data(int id, int p, int n, int *low_value, int *high_value, int *size) {
   //Low and high values for each processor, from 3 to n
   int true_size;
@@ -126,6 +127,7 @@ void decompose_data(int id, int p, int n, int *low_value, int *high_value, int *
   //remove even integers
   *size = true_size/2;
 }
+
 
 void processor_count_check(int p, int n, int id) {
   //largest prime is sqrt(n), so first processor has all primes if
@@ -140,6 +142,7 @@ void processor_count_check(int p, int n, int id) {
     exit (1);
   }
 }
+
 
 char* allocate_memory(int size) {
   //allocate memory for block, error if unable to
@@ -157,6 +160,7 @@ char* allocate_memory(int size) {
   for (i = 0; i < size; i++) marked[i] = 0;
   return marked;
 }
+
 
 void find_first_index(int *first, int prime, int low_value) {
   int mod_prime;
@@ -177,6 +181,7 @@ void find_first_index(int *first, int prime, int low_value) {
   }
 }
 
+
 int count_local_primes(char* marked, int size) {
   int count = 0;
   int i;
@@ -187,5 +192,4 @@ int count_local_primes(char* marked, int size) {
   }
 
   return count;
-}
-  
+}  
