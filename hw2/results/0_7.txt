@@ -1,0 +1,2 @@
+168 primes are less than or equal to 1000
+Total elapsed time:   0.000683
