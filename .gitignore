@@ -5,3 +5,6 @@
 /hw2/sieve_1
 /hw2/sieve_2
 /hw2/.fuse*
+/hw3/broadcast
+/hw3/broadcast_pipe
+/hw3/broadcast_mpi
