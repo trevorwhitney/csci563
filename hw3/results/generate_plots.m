@@ -1,7 +1,8 @@
 close all;
 colors = ['r', 'g', 'b'];
+scripts = {'broadcast'; 'broadcast_mpi'; 'broadcast_pipe'};
 for i=0:2
-    str = sprintf('%d_results.csv', i);
+    str = sprintf('%s_results.csv', char(scripts(i+1)));
     s = dlmread(str, ',', 1, 0);
     x = s(:,1);
     y = s(:,2);
@@ -11,6 +12,6 @@ end
 
 xlabel('# of Processors');
 ylabel('Time (seconds)');
-title('Sieve of Eratosthenes Results');
+title('Comparing Implementations of MPI Broadcast');
 
-legend('Original Script', 'No Evens', 'No Evens, No Prime Comm.', 'Location', 'NorthWest');
+legend('Binomial Brodcast', 'MPI\_Bcast()', 'Pipeline Broadcast', 'Location', 'East');
