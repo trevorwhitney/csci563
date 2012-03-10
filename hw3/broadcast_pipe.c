@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	double elapsed_time;
 	int p;
 	int id;
-	int i;
+	double i;
   double j;
   double k;
 	int source;
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
   package = malloc(sizeof(int[package_size]));
   if (!id) {
     for (i = 0; i < package_size; i++) {
-      package[i] = i % 64; //use mod to fill array with different ints that won't overflow
+      package[(int)i] = (int)i % 64; //use mod to fill array with different ints that won't overflow
     }
   }
   
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     if (i + 1 < p) {
       //only send from procs with data
       //do i + 1 sends, starting at proc 0
-      count = i;
+      count = (int)i;
       for (j = 0; j < i + 1; j++) {
         if (id == (int)j && (int)j+1 < p) {
           //send package[count] to j+1
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     }
     else if (i >= package_size) {
       //proc 0 is done, so not all procs will be sending on each iteration
-      send_id = i - package_size + 1;
+      send_id = (int)i - package_size + 1;
       count = package_size - 1;
       for (j = 0; j < p - 1; j++) {
         /*if (!id) {
@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
     else {
       //do p - 1 sends
       //0 to 1 is i, each sucessive is i - 1
-      count = i;
+      count = (int)i;
       for (j = 0; j < p - 1; j++) {
         if (id == (int)j && (int)j + 1 < p) {
           //send package[count] to j+1
@@ -103,10 +103,10 @@ int main(int argc, char *argv[])
 
   //verify arrays
   for (i = 0; i < p; i++) {
-    if (id == i) {
+    if (id == (int)i) {
       for (k = 0; k < package_size; k++) {
         if (package[(int)k] != (int)k % 64) {
-          printf("Invalid array element at address %d on id %d\n", (int)k, i);
+          printf("Invalid array element at address %d on id %d\n", (int)k, (int)i);
           exit(1);
         }
       }

@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	double elapsed_time;
 	int p;
 	int id;
-	int i;
+	double i;
   double j;
 	int source;
 	int destination;
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
   package = malloc(sizeof(int[package_size]));
   if (!id) {
     for (i = 0; i < package_size; i++) {
-      package[i] = i % 64; //use mod to fill array with different ints that won't overflow
+      package[(int)i] = (int)i % 64; //use mod to fill array with different ints that won't overflow
     }
   }
   
@@ -57,10 +57,10 @@ int main(int argc, char *argv[])
 
   //verify arrays
   for (i = 0; i < p; i++) {
-    if (id == i) {
+    if (id == (int)i) {
       for (j = 0; j < package_size; j++) {
         if (package[(int)j] != (int)j % 64) {
-          printf("Invalid array element at address %d on id %d\n", (int)j, i);
+          printf("Invalid array element at address %d on id %d\n", (int)j, (int)i);
           exit(1);
         }
       }
