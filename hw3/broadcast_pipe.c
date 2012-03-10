@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
   //create 10MB array to send and recieve
   package_size = 2621440;
-  //package_size = 128;
+  //package_size = 10;
   package = malloc(sizeof(int[package_size]));
   if (!id) {
     for (i = 0; i < package_size; i++) {
@@ -39,45 +39,42 @@ int main(int argc, char *argv[])
     }
   }
   
-  for (i = 0; i < package_size; i++) {
-    if (!id) 
-      //printf("Iteration: %d\n", i);
-    if (i < p) {
-      //only send to ready processors
+  for (i = 0; i < package_size + p - 1; i++) {
+    if (i + 1 < p) {
+      //only send from procs with data
       //do i + 1 sends, starting at proc 0
       count = i;
       for (j = 0; j < i + 1; j++) {
         if (id == (int)j && (int)j+1 < p) {
           //send package[count] to j+1
-          //printf("Iteration: %d. Sending package[%d] from %d to %d\n", i, count, (int)j, (int)j+1);
+          //printf("Iteration: %d. Sending package[%d] from %d to %d in loop 1\n", i, count, (int)j, (int)j+1);
           MPI_Send(&package[count], 1, MPI_INT, (int)j + 1, TAG, MPI_COMM_WORLD);
         }
         if (id == (int)j+1) {
           //recv package[count] from j
-          //printf("Iteration: %d. Recieving package[%d] on %d from %d\n", i, count, (int)j+1, (int)j);
+          //printf("Iteration: %d. Recieving package[%d] on %d from %d in loop 1\n", i, count, (int)j+1, (int)j);
           MPI_Recv(&package[count], 1, MPI_INT, (int)j, TAG, MPI_COMM_WORLD, status);
         }
         count--;
       }
     }
-    else if (i > p) {
-      //proc 0 is done
-      //do m - i sends, starting at p - (m - (i-1))
-      send_id = i - p;
-      //printf("Send id is : %d\n", send_id);
-      count = p;
-      //printf("Count is: %d\n", count);
-      for (j = 0; j < p - (send_id + 1); j++) {
-        //printf("Send id is : %d\n", send_id);
-        //printf("Count is: %d\n", count);
+    else if (i >= package_size) {
+      //proc 0 is done, so not all procs will be sending on each iteration
+      send_id = i - package_size + 1;
+      count = package_size - 1;
+      for (j = 0; j < p - 1; j++) {
+        /*if (!id) {
+          printf("I: %d. Send id is : %d\n", i, send_id);
+          printf("I: %d. Count is: %d\n", i, count);
+        }*/
         if (id == send_id && send_id + 1 < p) {
           //send package[count] to start_id + 1
-          //printf("Iteration: %d. Sending package[%d] from %d to %d\n", i, count, send_id, send_id + 1);
+          //printf("Iteration: %d. Sending package[%d] from %d to %d in loop 2\n", i, count, send_id, send_id + 1);
           MPI_Send(&package[count], 1, MPI_INT, send_id + 1, TAG, MPI_COMM_WORLD);
         }
         if (id == send_id + 1) {
           //recv package[count] from start_id
-          //printf("Iteration: %d. Recieving package[%d] on %d from %d\n", i, count, send_id + 1, send_id);
+          //printf("Iteration: %d. Recieving package[%d] on %d from %d in loop 2\n", i, count, send_id + 1, send_id);
           MPI_Recv(&package[count], 1, MPI_INT, send_id, TAG, MPI_COMM_WORLD, status);
         }
         count--;
@@ -91,12 +88,12 @@ int main(int argc, char *argv[])
       for (j = 0; j < p - 1; j++) {
         if (id == (int)j && (int)j + 1 < p) {
           //send package[count] to j+1
-          //printf("Iteration: %d. Sending package[%d] from %d to %d\n", i, count, (int)j, (int)j+1);
+          //printf("Iteration: %d. Sending package[%d] from %d to %d in loop 3\n", i, count, (int)j, (int)j+1);
           MPI_Send(&package[count], 1, MPI_INT, (int)j + 1, TAG, MPI_COMM_WORLD);
         }
         if (id == (int)j + 1) {
           //recv pacakge[count] from j
-          //printf("Iteration: %d. Recieving package[%d] on %d from %d\n", i, count, (int)j+1, (int)j);
+          //printf("Iteration: %d. Recieving package[%d] on %d from %d in loop 3\n", i, count, (int)j+1, (int)j);
           MPI_Recv(package + count, 1, MPI_INT, (int)j, TAG, MPI_COMM_WORLD, status);
         }
         count--;
@@ -105,7 +102,6 @@ int main(int argc, char *argv[])
   }
 
   //verify arrays
-  /*
   for (i = 0; i < p; i++) {
     if (id == i) {
       for (k = 0; k < package_size; k++) {
@@ -116,7 +112,6 @@ int main(int argc, char *argv[])
       }
     }
   }
-  */
 
   //get execution time
   elapsed_time += MPI_Wtime();
