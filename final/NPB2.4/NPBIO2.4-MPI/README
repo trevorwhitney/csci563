@@ -1,0 +1,8 @@
+The NPB IO benchmark has been integrated in NPB2.4-MPI.
+To build it, go to that subdirectory and type:
+
+   make bt CLASS=<class> NPROCS=<nprocs> SUBTYPE=<subtype>
+
+Where <subtype> is one of "full", "simple", "fortran",
+and "epio". Without subtype specification the regular bt
+benchmark is obtained.

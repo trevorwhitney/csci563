@@ -1,0 +1,51 @@
+#########################################
+# NAS Parallel Benchmarks 2             #
+# MPI/F77/C                             #
+# Revision 2.4                          #
+# NASA Ames Research Center             #
+# npb@nas.nasa.gov                      #
+# http://www.nas.nasa.gov/Software/NPB/ #
+#########################################
+
+CAUTION *********************************
+When running the I/O benchmark, one or more data files will be written
+in the directory from which the executable is invoked. They are not
+deleted at the end of the program. A new run will overwrite the old
+file(s). If not enough space is available in the user partition, the
+program will fail. For classes C and D the disk space required is
+3 GB and 135 GB, respectively.
+
+==========================================
+INSTALLATION
+
+    For documentation on installing and running the NAS Parallel
+    Benchmarks, refer to subdirectory Doc.
+
+==========================================
+BACKGROUND
+
+Information on NPB 2.4, including the technical reports, the          
+original specifications, source code, results and information        
+on how to submit new results, is available at:                       
+                                                                     
+       http://www.nas.nasa.gov/Software/NPB/                              
+                                                                     
+Send comments or suggestions to  npb@nas.nasa.gov                    
+                                                                     
+      NAS Parallel Benchmarks Group                                  
+      NASA Ames Research Center                                      
+      Mail Stop: T27A-1                                              
+      Moffett Field, CA   94035-1000                                 
+                                                                     
+      E-mail:  npb@nas.nasa.gov                                      
+      Fax:     (650) 604-3957                                        
+                                                                     
+Changes in 2.4
+
+- Added I/O benchmark (subtype of BT).
+- Added Class D for all benchmarks except IS.
+- Reduced size of tabulated exponentials in FT.
+- Made minor changes to FT to prevent integer overflow for class D on 
+  systems with 32-bit integers. FT class D will not run on small 
+  numbers of processors anymore.
+
