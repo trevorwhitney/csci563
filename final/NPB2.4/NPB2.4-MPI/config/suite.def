@@ -12,11 +12,11 @@
 # Comments start with "#" as the first character on a line. 
 # No blank lines. 
 # The following example builds 1 processor sample sizes of all benchmarks. 
-ft	S	2
 mg	S	2
-sp	S	2
 lu	S	2
-bt	S	2
 is	S	2
 ep	S	2
 cg	S	2
+# the following tests need processors in powers of 2
+sp S 1
+bt S 1
