@@ -11,8 +11,27 @@
 # formatting is inflexible. Separate name/class/number by tabs. 
 # Comments start with "#" as the first character on a line. 
 # No blank lines. 
-# The following example builds 1 processor sample sizes of all benchmarks. 
+#class S
 mg	S	2
+mg	S	4
+mg	S	6
+mg	S	8
+mg	S	2
+mg	S	4
+mg	S	6
+mg	S	8
+mg	S	2
+mg	S	4
+mg	S	6
+mg	S	8
+mg	S	2
+mg	S	4
+mg	S	6
+mg	S	8
+mg	S	2
+mg	S	4
+mg	S	6
+mg	S	8
 lu	S	2
 is	S	2
 ep	S	2
