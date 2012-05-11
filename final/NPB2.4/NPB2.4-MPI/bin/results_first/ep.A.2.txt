@@ -1,0 +1,63 @@
+
+ NAS Parallel Benchmarks 2.4 -- EP Benchmark
+
+ Number of random numbers generated:     536870912  
+ Number of active processes:                    2
+
+EP Benchmark Results:
+
+CPU Time =    7.0902
+N = 2^   28
+No. Gaussian Pairs =     210832767.
+Sums =    -4.295875165638687D+03   -1.580732573678578D+04
+Counts:
+  0      98257395.
+  1      93827014.
+  2      17611549.
+  3       1110028.
+  4         26536.
+  5           245.
+  6             0.
+  7             0.
+  8             0.
+  9             0.
+
+
+ EP Benchmark Completed.
+ Class           =                        A
+ Size            =                 536870912  
+ Iterations      =                        0
+ Time in seconds =                     7.09
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                    75.72
+ Mop/s/process   =                    37.86
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+

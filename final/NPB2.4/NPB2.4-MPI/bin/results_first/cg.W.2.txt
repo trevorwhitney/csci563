@@ -1,0 +1,70 @@
+
+
+ NAS Parallel Benchmarks 2.4 -- CG Benchmark
+
+ Size:       7000
+ Iterations:    15
+ Number of active processes:     2
+ Number of nonzeroes per row:        8
+ Eigenvalue shift: .120E+02
+
+   iteration           ||r||                 zeta
+        1       0.18783871195209E-12    11.9997003727381
+        2       0.25987866064729E-14    10.3457275664058
+        3       0.25442326758784E-14    10.3617880137963
+        4       0.25537016999064E-14    10.3625416284965
+        5       0.25869578190260E-14    10.3625905854467
+        6       0.25224922378326E-14    10.3625946467087
+        7       0.25238445018921E-14    10.3625950398342
+        8       0.24794133307783E-14    10.3625950817269
+        9       0.24360375714870E-14    10.3625950864815
+       10       0.24878549813823E-14    10.3625950870452
+       11       0.24393496387030E-14    10.3625950871141
+       12       0.24409654849993E-14    10.3625950871227
+       13       0.24278647321053E-14    10.3625950871238
+       14       0.23737454112649E-14    10.3625950871240
+       15       0.23400950107224E-14    10.3625950871240
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is      0.103625950871E+02
+ Error is     0.000000000000E+00
+
+
+ CG Benchmark Completed.
+ Class           =                        W
+ Size            =                     7000
+ Iterations      =                       15
+ Time in seconds =                     0.12
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  3431.67
+ Mop/s/process   =                  1715.84
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+

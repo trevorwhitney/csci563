@@ -1,0 +1,70 @@
+
+
+ NAS Parallel Benchmarks 2.4 -- LU Benchmark
+
+ Size:  12x 12x 12
+ Iterations:  50
+ Number of processes:     2
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   50
+
+ Verification being performed for class S
+ Accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1   0.1619634321098E-01 0.1619634321098E-01 0.2998964438740E-14
+           2   0.2197674516482E-02 0.2197674516482E-02 0.1359646828937E-12
+           3   0.1517992765340E-02 0.1517992765340E-02 0.2359829414002E-12
+           4   0.1502958443599E-02 0.1502958443599E-02 0.2178563602241E-13
+           5   0.3426407315590E-01 0.3426407315590E-01 0.8708025940479E-14
+ Comparison of RMS-norms of solution error
+           1   0.6422331995796E-03 0.6422331995796E-03 0.1688175219212E-14
+           2   0.8414434204735E-04 0.8414434204735E-04 0.5798262435090E-14
+           3   0.5858826961649E-04 0.5858826961649E-04 0.1734885743100E-14
+           4   0.5847422259516E-04 0.5847422259516E-04 0.1494911711129E-13
+           5   0.1310334791411E-02 0.1310334791411E-02 0.7612298820307E-14
+ Comparison of surface integral
+               0.7841892886594E+01 0.7841892886594E+01 0.0000000000000E+00
+ Verification Successful
+
+
+ LU Benchmark Completed.
+ Class           =                        S
+ Size            =             12x  12x  12
+ Iterations      =                       50
+ Time in seconds =                     0.02
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  5776.32
+ Mop/s/process   =                  2888.16
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+

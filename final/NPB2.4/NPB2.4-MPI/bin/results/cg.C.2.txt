@@ -1,0 +1,57 @@
+
+Error: 
+num of procs allocated   (   8 )
+is not equal to
+compiled number of procs (   2 )
+
+
+
+ NAS Parallel Benchmarks 2.4 -- CG Benchmark
+
+ Size:     150000
+ Iterations:    75
+ Number of active processes:     8
+ Number of nonzeroes per row:       15
+
+Error: 
+num of procs allocated   (   8 )
+is not equal to
+compiled number of procs (   2 )
+
+
+Error: 
+num of procs allocated   (   8 )
+is not equal to
+compiled number of procs (   2 )
+
+ Eigenvalue shift: .110E+03
+
+Error: 
+num of procs allocated   (   8 )
+is not equal to
+compiled number of procs (   2 )
+
+
+Error: 
+num of procs allocated   (   8 )
+is not equal to
+compiled number of procs (   2 )
+
+
+Error: 
+num of procs allocated   (   8 )
+is not equal to
+compiled number of procs (   2 )
+
+
+Error: 
+num of procs allocated   (   8 )
+is not equal to
+compiled number of procs (   2 )
+
+
+Error: 
+num of procs allocated   (   8 )
+is not equal to
+compiled number of procs (   2 )
+

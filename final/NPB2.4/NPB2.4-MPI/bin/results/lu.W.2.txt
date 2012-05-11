@@ -1,0 +1,84 @@
+
+
+ NAS Parallel Benchmarks 2.4 -- LU Benchmark
+
+     Warning: program is running on  8 processors
+     but was compiled for   2
+ Size:  33x 33x 33
+ Iterations: 300
+ Number of processes:     8
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  260
+ Time step  280
+ Time step  300
+
+ Verification being performed for class W
+ Accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1   0.1236511638192E+02 0.1236511638192E+02 0.1458136046845E-12
+           2   0.1317228477799E+01 0.1317228477799E+01 0.3784386281184E-12
+           3   0.2550120713095E+01 0.2550120713095E+01 0.9386382490838E-13
+           4   0.2326187750252E+01 0.2326187750252E+01 0.1832722407767E-12
+           5   0.2826799444189E+02 0.2826799444189E+02 0.1528265417733E-12
+ Comparison of RMS-norms of solution error
+           1   0.4867877144216E+00 0.4867877144216E+00 0.5108796918006E-13
+           2   0.5064652880982E-01 0.5064652880982E-01 0.9439734592166E-13
+           3   0.9281818101960E-01 0.9281818101960E-01 0.1674577348318E-13
+           4   0.8570126542733E-01 0.8570126542733E-01 0.8906266735081E-14
+           5   0.1084277417792E+01 0.1084277417792E+01 0.2553678770746E-12
+ Comparison of surface integral
+               0.1161399311023E+02 0.1161399311023E+02 0.3074289103934E-13
+ Verification Successful
+
+
+ LU Benchmark Completed.
+ Class           =                        W
+ Size            =             33x  33x  33
+ Iterations      =                      300
+ Time in seconds =                     1.95
+ Total processes =                        8
+ Compiled procs  =                        2
+ Mop/s total     =                  9281.14
+ Mop/s/process   =                  1160.14
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+

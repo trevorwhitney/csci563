@@ -1,0 +1,1780 @@
+
+
+ NAS Parallel Benchmarks 2.4 -- CG Benchmark
+
+ Size:      14000
+ Iterations:    15
+ Number of active processes:     2
+ Number of nonzeroes per row:       11
+ Eigenvalue shift: .200E+02
+
+   iteration           ||r||                 zeta
+        1       0.30634143529489E-12    19.9997581277040
+        2       0.31096276403002E-14    17.1140495745506
+        3       0.30804037245735E-14    17.1296668946143
+        4       0.31368886171027E-14    17.1302113581193
+        5       0.30931762620174E-14    17.1302338856353
+        6       0.30711211120903E-14    17.1302349879482
+        7       0.30014434726280E-14    17.1302350498916
+        8       0.30091464390590E-14    17.1302350537510
+        9       0.30845738922029E-14    17.1302350540101
+       10       0.30464804270749E-14    17.1302350540284
+       11       0.30356703468820E-14    17.1302350540298
+       12       0.30110387739490E-14    17.1302350540299
+       13       0.29937783924423E-14    17.1302350540299
+       14       0.30298504149112E-14    17.1302350540299
+       15       0.30223982636897E-14    17.1302350540299
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is      0.171302350540E+02
+ Error is     0.895283847058E-12
+
+
+ CG Benchmark Completed.
+ Class           =                        A
+ Size            =                    14000
+ Iterations      =                       15
+ Time in seconds =                     0.54
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  2781.65
+ Mop/s/process   =                  1390.82
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- CG Benchmark
+
+ Size:      75000
+ Iterations:    75
+ Number of active processes:     2
+ Number of nonzeroes per row:       13
+ Eigenvalue shift: .600E+02
+
+   iteration           ||r||                 zeta
+        1       0.22570593804977E-12    59.9994751578754
+        2       0.87940525110205E-15    21.7627846142534
+        3       0.91437860021792E-15    22.2876617043224
+        4       0.94070151553213E-15    22.5230738188351
+        5       0.95061921543782E-15    22.6275390653894
+        6       0.95020110557135E-15    22.6740259189539
+        7       0.96182780922821E-15    22.6949056826254
+        8       0.95596074233319E-15    22.7044023166870
+        9       0.95970296822520E-15    22.7087834345616
+       10       0.96585915228054E-15    22.7108351397173
+       11       0.96181371319440E-15    22.7118107121338
+       12       0.96172939735102E-15    22.7122816240974
+       13       0.96249111012209E-15    22.7125122663251
+       14       0.95484515346749E-15    22.7126268007600
+       15       0.95859112595530E-15    22.7126844161815
+       16       0.95944617919119E-15    22.7127137461757
+       17       0.95550237102011E-15    22.7127288401998
+       18       0.95635771795123E-15    22.7127366848299
+       19       0.95917386303274E-15    22.7127407981220
+       20       0.95268979542345E-15    22.7127429721363
+       21       0.95810825900668E-15    22.7127441294025
+       22       0.95400990447020E-15    22.7127447493899
+       23       0.95367097788352E-15    22.7127450834529
+       24       0.95960112286270E-15    22.7127452643880
+       25       0.95521595160553E-15    22.7127453628459
+       26       0.95199057443662E-15    22.7127454166512
+       27       0.95208372247816E-15    22.7127454461693
+       28       0.95289804858272E-15    22.7127454624206
+       29       0.96058618286659E-15    22.7127454713970
+       30       0.95022456844079E-15    22.7127454763706
+       31       0.95077106519748E-15    22.7127454791340
+       32       0.95572706699156E-15    22.7127454806733
+       33       0.95798346533471E-15    22.7127454815324
+       34       0.95271350739035E-15    22.7127454820135
+       35       0.95966736799946E-15    22.7127454822838
+       36       0.95214511214537E-15    22.7127454824349
+       37       0.95219895853123E-15    22.7127454825207
+       38       0.95369753117332E-15    22.7127454825686
+       39       0.94964050811770E-15    22.7127454825961
+       40       0.95696543704420E-15    22.7127454826112
+       41       0.95376037875561E-15    22.7127454826204
+       42       0.94856994338489E-15    22.7127454826251
+       43       0.94774927836675E-15    22.7127454826279
+       44       0.95322702009650E-15    22.7127454826297
+       45       0.94561234382944E-15    22.7127454826306
+       46       0.94572166965919E-15    22.7127454826308
+       47       0.94743401855688E-15    22.7127454826314
+       48       0.95470023852757E-15    22.7127454826317
+       49       0.94814538028166E-15    22.7127454826316
+       50       0.95278188926363E-15    22.7127454826317
+       51       0.93906249089969E-15    22.7127454826316
+       52       0.94593608316941E-15    22.7127454826318
+       53       0.94536563439030E-15    22.7127454826321
+       54       0.94301147556588E-15    22.7127454826314
+       55       0.94391408425065E-15    22.7127454826321
+       56       0.94869352818107E-15    22.7127454826319
+       57       0.94518980855149E-15    22.7127454826316
+       58       0.94677650992421E-15    22.7127454826317
+       59       0.94314336544113E-15    22.7127454826315
+       60       0.94519474120339E-15    22.7127454826318
+       61       0.94509501711820E-15    22.7127454826316
+       62       0.94461340801117E-15    22.7127454826318
+       63       0.94013663361090E-15    22.7127454826314
+       64       0.94132294235102E-15    22.7127454826317
+       65       0.94378983001658E-15    22.7127454826315
+       66       0.93645785275287E-15    22.7127454826315
+       67       0.94422938369344E-15    22.7127454826317
+       68       0.93511738849518E-15    22.7127454826318
+       69       0.93930873309396E-15    22.7127454826318
+       70       0.94927464623617E-15    22.7127454826317
+       71       0.94490267389902E-15    22.7127454826315
+       72       0.93968703949464E-15    22.7127454826314
+       73       0.93315842032367E-15    22.7127454826318
+       74       0.94130325570147E-15    22.7127454826316
+       75       0.94220605555182E-15    22.7127454826317
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is      0.227127454826E+02
+ Error is     0.731859017833E-12
+
+
+ CG Benchmark Completed.
+ Class           =                        B
+ Size            =                    75000
+ Iterations      =                       75
+ Time in seconds =                    29.91
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  1828.97
+ Mop/s/process   =                   914.48
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- CG Benchmark
+
+ Size:     150000
+ Iterations:    75
+ Number of active processes:     2
+ Number of nonzeroes per row:       15
+ Eigenvalue shift: .110E+03
+
+   iteration           ||r||                 zeta
+        1       0.34918028513489E-12   109.9994423237398
+        2       0.93261202935200E-15    27.3920437146530
+        3       0.94002966917904E-15    28.0339761840276
+        4       0.94986672029943E-15    28.4191507551296
+        5       0.95373147965057E-15    28.6471670038882
+        6       0.95933824815541E-15    28.7812969418424
+        7       0.95552953080657E-15    28.8600458537354
+        8       0.95935583896459E-15    28.9063145572688
+        9       0.96295546883800E-15    28.9335649214633
+       10       0.95984970808734E-15    28.9496695449005
+       11       0.96286896507553E-15    28.9592263353758
+       12       0.96132779695897E-15    28.9649233484888
+       13       0.96029237140078E-15    28.9683359248936
+       14       0.95995316106402E-15    28.9703903960005
+       15       0.96086676866082E-15    28.9716336228368
+       16       0.96262162662325E-15    28.9723898600848
+       17       0.95995080306971E-15    28.9728522692217
+       18       0.96193291189142E-15    28.9731364797786
+       19       0.95899160435305E-15    28.9733120569290
+       20       0.96457382743280E-15    28.9734210663758
+       21       0.96345263086780E-15    28.9734890760540
+       22       0.95991244026784E-15    28.9735317064871
+       23       0.96179771645883E-15    28.9735585497255
+       24       0.95922390194743E-15    28.9735755256645
+       25       0.95815516189961E-15    28.9735863059383
+       26       0.95650780373655E-15    28.9735931787384
+       27       0.96122729736496E-15    28.9735975767374
+       28       0.96445016745281E-15    28.9736004009986
+       29       0.95990409698108E-15    28.9736022206758
+       30       0.96122924599343E-15    28.9736033967627
+       31       0.96146664491229E-15    28.9736041591164
+       32       0.96021527445782E-15    28.9736046546412
+       33       0.96021180308293E-15    28.9736049775610
+       34       0.95729744671819E-15    28.9736051885093
+       35       0.95819450134146E-15    28.9736053266252
+       36       0.95868554202208E-15    28.9736054172461
+       37       0.95768757616458E-15    28.9736054768224
+       38       0.96008098193957E-15    28.9736055160636
+       39       0.95588177574636E-15    28.9736055419569
+       40       0.95596041801372E-15    28.9736055590703
+       41       0.95746930735378E-15    28.9736055703979
+       42       0.95997167085028E-15    28.9736055779079
+       43       0.95723880205007E-15    28.9736055828930
+       44       0.95924740452702E-15    28.9736055862076
+       45       0.95371145597657E-15    28.9736055884132
+       46       0.95318903643820E-15    28.9736055898831
+       47       0.95790947016508E-15    28.9736055908644
+       48       0.95959995836323E-15    28.9736055915181
+       49       0.95753779499159E-15    28.9736055919562
+       50       0.95764123496239E-15    28.9736055922487
+       51       0.95483213890000E-15    28.9736055924456
+       52       0.95068160191577E-15    28.9736055925766
+       53       0.95462149821796E-15    28.9736055926645
+       54       0.96256618266640E-15    28.9736055927226
+       55       0.95659170926785E-15    28.9736055927623
+       56       0.95432275329106E-15    28.9736055927895
+       57       0.95491178355062E-15    28.9736055928084
+       58       0.95456960678414E-15    28.9736055928196
+       59       0.95676787433924E-15    28.9736055928280
+       60       0.95323859143322E-15    28.9736055928346
+       61       0.95435144665413E-15    28.9736055928382
+       62       0.95872176340540E-15    28.9736055928405
+       63       0.95212290767308E-15    28.9736055928420
+       64       0.95286732683930E-15    28.9736055928438
+       65       0.95664021979590E-15    28.9736055928435
+       66       0.95330095754448E-15    28.9736055928445
+       67       0.95423532836686E-15    28.9736055928447
+       68       0.95544125819715E-15    28.9736055928450
+       69       0.95225936673019E-15    28.9736055928440
+       70       0.95281554497492E-15    28.9736055928450
+       71       0.95355646251647E-15    28.9736055928452
+       72       0.95194011825555E-15    28.9736055928470
+       73       0.95618872476637E-15    28.9736055928450
+       74       0.95688209213914E-15    28.9736055928442
+       75       0.95214517773215E-15    28.9736055928458
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is      0.289736055928E+02
+ Error is     0.785149723015E-12
+
+
+ CG Benchmark Completed.
+ Class           =                        C
+ Size            =                   150000
+ Iterations      =                       75
+ Time in seconds =                   100.00
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  1433.53
+ Mop/s/process   =                   716.76
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- CG Benchmark
+
+ Size:       1400
+ Iterations:    15
+ Number of active processes:     2
+ Number of nonzeroes per row:        7
+ Eigenvalue shift: .100E+02
+
+   iteration           ||r||                 zeta
+        1       0.14006707615843E-12     9.9986441579140
+        2       0.22238035211776E-14     8.5733279203222
+        3       0.22011811403152E-14     8.5954510374058
+        4       0.21460768050082E-14     8.5969972340737
+        5       0.21900506583969E-14     8.5971549151767
+        6       0.22056304446237E-14     8.5971744311608
+        7       0.21826847742893E-14     8.5971770704913
+        8       0.21982490242400E-14     8.5971774440630
+        9       0.22783754988959E-14     8.5971774983942
+       10       0.21314039560848E-14     8.5971775064409
+       11       0.21442923224803E-14     8.5971775076486
+       12       0.20631272969953E-14     8.5971775078318
+       13       0.21764734978184E-14     8.5971775078598
+       14       0.21165863038914E-14     8.5971775078641
+       15       0.21624874436224E-14     8.5971775078648
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is      0.859717750786E+01
+ Error is     0.710542735760E-14
+
+
+ CG Benchmark Completed.
+ Class           =                        S
+ Size            =                     1400
+ Iterations      =                       15
+ Time in seconds =                     0.02
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  2677.31
+ Mop/s/process   =                  1338.65
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- CG Benchmark
+
+ Size:       7000
+ Iterations:    15
+ Number of active processes:     2
+ Number of nonzeroes per row:        8
+ Eigenvalue shift: .120E+02
+
+   iteration           ||r||                 zeta
+        1       0.18783871195209E-12    11.9997003727381
+        2       0.25987866064729E-14    10.3457275664058
+        3       0.25442326758784E-14    10.3617880137963
+        4       0.25537016999064E-14    10.3625416284965
+        5       0.25869578190260E-14    10.3625905854467
+        6       0.25224922378326E-14    10.3625946467087
+        7       0.25238445018921E-14    10.3625950398342
+        8       0.24794133307783E-14    10.3625950817269
+        9       0.24360375714870E-14    10.3625950864815
+       10       0.24878549813823E-14    10.3625950870452
+       11       0.24393496387030E-14    10.3625950871141
+       12       0.24409654849993E-14    10.3625950871227
+       13       0.24278647321053E-14    10.3625950871238
+       14       0.23737454112649E-14    10.3625950871240
+       15       0.23400950107224E-14    10.3625950871240
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is      0.103625950871E+02
+ Error is     0.000000000000E+00
+
+
+ CG Benchmark Completed.
+ Class           =                        W
+ Size            =                     7000
+ Iterations      =                       15
+ Time in seconds =                     0.12
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  3431.67
+ Mop/s/process   =                  1715.84
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- EP Benchmark
+
+ Number of random numbers generated:     536870912  
+ Number of active processes:                    2
+
+EP Benchmark Results:
+
+CPU Time =    7.0902
+N = 2^   28
+No. Gaussian Pairs =     210832767.
+Sums =    -4.295875165638687D+03   -1.580732573678578D+04
+Counts:
+  0      98257395.
+  1      93827014.
+  2      17611549.
+  3       1110028.
+  4         26536.
+  5           245.
+  6             0.
+  7             0.
+  8             0.
+  9             0.
+
+
+ EP Benchmark Completed.
+ Class           =                        A
+ Size            =                 536870912  
+ Iterations      =                        0
+ Time in seconds =                     7.09
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                    75.72
+ Mop/s/process   =                    37.86
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- EP Benchmark
+
+ Number of random numbers generated:    2147483648  
+ Number of active processes:                    2
+
+EP Benchmark Results:
+
+CPU Time =   28.3844
+N = 2^   30
+No. Gaussian Pairs =     843345606.
+Sums =     4.033815542442365D+04   -2.660669192810563D+04
+Counts:
+  0     393058470.
+  1     375280898.
+  2      70460742.
+  3       4438852.
+  4        105691.
+  5           948.
+  6             5.
+  7             0.
+  8             0.
+  9             0.
+
+
+ EP Benchmark Completed.
+ Class           =                        B
+ Size            =                2147483648  
+ Iterations      =                        0
+ Time in seconds =                    28.38
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                    75.66
+ Mop/s/process   =                    37.83
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- EP Benchmark
+
+ Number of random numbers generated:    8589934592  
+ Number of active processes:                    2
+
+EP Benchmark Results:
+
+CPU Time =  113.1397
+N = 2^   32
+No. Gaussian Pairs =    3373275903.
+Sums =     4.764367927997834D+04   -8.084072988025697D+04
+Counts:
+  0    1572172634.
+  1    1501108549.
+  2     281805648.
+  3      17761221.
+  4        424017.
+  5          3821.
+  6            13.
+  7             0.
+  8             0.
+  9             0.
+
+
+ EP Benchmark Completed.
+ Class           =                        C
+ Size            =                8589934592  
+ Iterations      =                        0
+ Time in seconds =                   113.14
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                    75.92
+ Mop/s/process   =                    37.96
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- EP Benchmark
+
+ Number of random numbers generated:      33554432  
+ Number of active processes:                    2
+
+EP Benchmark Results:
+
+CPU Time =    0.4511
+N = 2^   24
+No. Gaussian Pairs =      13176389.
+Sums =    -3.247834652034487D+03   -6.958407078382574D+03
+Counts:
+  0       6140517.
+  1       5865300.
+  2       1100361.
+  3         68546.
+  4          1648.
+  5            17.
+  6             0.
+  7             0.
+  8             0.
+  9             0.
+
+
+ EP Benchmark Completed.
+ Class           =                        S
+ Size            =                  33554432  
+ Iterations      =                        0
+ Time in seconds =                     0.45
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                    74.38
+ Mop/s/process   =                    37.19
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- EP Benchmark
+
+ Number of random numbers generated:      67108864  
+ Number of active processes:                    2
+
+EP Benchmark Results:
+
+CPU Time =    0.8902
+N = 2^   25
+No. Gaussian Pairs =      26354769.
+Sums =    -2.863319731646375D+03   -6.320053679108284D+03
+Counts:
+  0      12281576.
+  1      11729692.
+  2       2202726.
+  3        137368.
+  4          3371.
+  5            36.
+  6             0.
+  7             0.
+  8             0.
+  9             0.
+
+
+ EP Benchmark Completed.
+ Class           =                        W
+ Size            =                  67108864  
+ Iterations      =                        0
+ Time in seconds =                     0.89
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                    75.38
+ Mop/s/process   =                    37.69
+ Operation type  = Random numbers generated
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- IS Benchmark
+
+ Size:  8388608  (class A)
+ Iterations:   10
+ Number of processes:     2
+
+   iteration
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10
+
+
+ IS Benchmark Completed
+ Class           =                        A
+ Size            =                  8388608
+ Iterations      =                       10
+ Time in seconds =                     0.27
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                   315.83
+ Mop/s/process   =                   157.92
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPICC        = mpicc
+    CLINK        = mpicc
+    CMPI_LIB     = -L/usr/local/lib -lmpi
+    CMPI_INC     = -I/usr/local/include
+    CFLAGS       = -O3 
+    CLINKFLAGS   = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- IS Benchmark
+
+ Size:  33554432  (class B)
+ Iterations:   10
+ Number of processes:     2
+
+   iteration
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10
+
+
+ IS Benchmark Completed
+ Class           =                        B
+ Size            =                 33554432
+ Iterations      =                       10
+ Time in seconds =                     1.07
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                   312.41
+ Mop/s/process   =                   156.21
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPICC        = mpicc
+    CLINK        = mpicc
+    CMPI_LIB     = -L/usr/local/lib -lmpi
+    CMPI_INC     = -I/usr/local/include
+    CFLAGS       = -O3 
+    CLINKFLAGS   = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- IS Benchmark
+
+ Size:  134217728  (class C)
+ Iterations:   10
+ Number of processes:     2
+
+   iteration
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10
+
+
+ IS Benchmark Completed
+ Class           =                        C
+ Size            =                134217728
+ Iterations      =                       10
+ Time in seconds =                     4.51
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                   297.32
+ Mop/s/process   =                   148.66
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPICC        = mpicc
+    CLINK        = mpicc
+    CMPI_LIB     = -L/usr/local/lib -lmpi
+    CMPI_INC     = -I/usr/local/include
+    CFLAGS       = -O3 
+    CLINKFLAGS   = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- IS Benchmark
+
+ Size:  65536  (class S)
+ Iterations:   10
+ Number of processes:     2
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[3]: 64917
+Verified: test_rank_array[4]: 65463
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+Verified: test_rank_array[0]: 0
+Verified: test_rank_array[1]: 18
+Verified: test_rank_array[2]: 346
+
+
+ IS Benchmark Completed
+ Class           =                        S
+ Size            =                    65536
+ Iterations      =                       10
+ Time in seconds =                     0.00
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                   215.15
+ Mop/s/process   =                   107.58
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPICC        = mpicc
+    CLINK        = mpicc
+    CMPI_LIB     = -L/usr/local/lib -lmpi
+    CMPI_INC     = -I/usr/local/include
+    CFLAGS       = -O3 
+    CLINKFLAGS   = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- IS Benchmark
+
+ Size:  1048576  (class W)
+ Iterations:   10
+ Number of processes:     2
+
+   iteration
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10
+
+
+ IS Benchmark Completed
+ Class           =                        W
+ Size            =                  1048576
+ Iterations      =                       10
+ Time in seconds =                     0.03
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                   380.40
+ Mop/s/process   =                   190.20
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPICC        = mpicc
+    CLINK        = mpicc
+    CMPI_LIB     = -L/usr/local/lib -lmpi
+    CMPI_INC     = -I/usr/local/include
+    CFLAGS       = -O3 
+    CLINKFLAGS   = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+ NAS Parallel Benchmarks 2.4 -- LU Benchmark
+
+ Size:  64x 64x 64
+ Iterations: 250
+ Number of processes:     2
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class A
+ Accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1   0.7790210760669E+03 0.7790210760669E+03 0.1736632564189E-13
+           2   0.6340276525969E+02 0.6340276525969E+02 0.7284426418191E-14
+           3   0.1949924972729E+03 0.1949924972729E+03 0.7725172100868E-14
+           4   0.1784530116042E+03 0.1784530116042E+03 0.1433404696139E-14
+           5   0.1838476034946E+04 0.1838476034946E+04 0.1780921189151E-13
+ Comparison of RMS-norms of solution error
+           1   0.2996408568547E+02 0.2996408568547E+02 0.1897051672375E-14
+           2   0.2819457636500E+01 0.2819457636500E+01 0.2047613574083E-14
+           3   0.7347341269878E+01 0.7347341269877E+01 0.6890406755769E-14
+           4   0.6713922568778E+01 0.6713922568778E+01 0.5953007124683E-14
+           5   0.7071531568839E+02 0.7071531568839E+02 0.9646015430879E-14
+ Comparison of surface integral
+               0.2603092560489E+02 0.2603092560489E+02 0.4094414927144E-15
+ Verification Successful
+
+
+ LU Benchmark Completed.
+ Class           =                        A
+ Size            =             64x  64x  64
+ Iterations      =                      250
+ Time in seconds =                    20.58
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  5797.21
+ Mop/s/process   =                  2898.60
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- LU Benchmark
+
+ Size: 102x102x102
+ Iterations: 250
+ Number of processes:     2
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class B
+ Accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1   0.3553267296998E+04 0.3553267296998E+04 0.2047680910561E-14
+           2   0.2621475079531E+03 0.2621475079531E+03 0.3903075590852E-14
+           3   0.8833372185095E+03 0.8833372185095E+03 0.3732343916732E-14
+           4   0.7781277473942E+03 0.7781277473943E+03 0.7012946433168E-14
+           5   0.7308796959255E+04 0.7308796959255E+04 0.3733150777795E-14
+ Comparison of RMS-norms of solution error
+           1   0.1140117638021E+03 0.1140117638021E+03 0.6481475424527E-14
+           2   0.8109896365542E+01 0.8109896365542E+01 0.2190357014854E-15
+           3   0.2848059731770E+02 0.2848059731770E+02 0.4740178665794E-14
+           4   0.2590539456783E+02 0.2590539456783E+02 0.1919985869081E-14
+           5   0.2605490750486E+03 0.2605490750486E+03 0.1221739687854E-13
+ Comparison of surface integral
+               0.4788716270331E+02 0.4788716270331E+02 0.1038649790370E-14
+ Verification Successful
+
+
+ LU Benchmark Completed.
+ Class           =                        B
+ Size            =            102x 102x 102
+ Iterations      =                      250
+ Time in seconds =                    87.51
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  5700.27
+ Mop/s/process   =                  2850.14
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- LU Benchmark
+
+ Size: 162x162x162
+ Iterations: 250
+ Number of processes:     2
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  250
+
+ Verification being performed for class C
+ Accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1   0.1037669803235E+05 0.1037669803235E+05 0.5609458879114E-14
+           2   0.8922124588010E+03 0.8922124588010E+03 0.1274212622792E-15
+           3   0.2562388145827E+04 0.2562388145827E+04 0.3016992167116E-14
+           4   0.2191943438578E+04 0.2191943438578E+04 0.1638958382217E-13
+           5   0.1780780572611E+05 0.1780780572611E+05 0.4494407395667E-14
+ Comparison of RMS-norms of solution error
+           1   0.2159863997170E+03 0.2159863997169E+03 0.1289584681179E-13
+           2   0.1557895592399E+02 0.1557895592399E+02 0.2508502537493E-14
+           3   0.5413188630772E+02 0.5413188630772E+02 0.1470127716458E-13
+           4   0.4822626431540E+02 0.4822626431540E+02 0.5893408878723E-14
+           5   0.4559029100432E+03 0.4559029100433E+03 0.5735425701383E-14
+ Comparison of surface integral
+               0.6664045535722E+02 0.6664045535722E+02 0.1066233314210E-14
+ Verification Successful
+
+
+ LU Benchmark Completed.
+ Class           =                        C
+ Size            =            162x 162x 162
+ Iterations      =                      250
+ Time in seconds =                   416.27
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  4898.26
+ Mop/s/process   =                  2449.13
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- LU Benchmark
+
+ Size:  12x 12x 12
+ Iterations:  50
+ Number of processes:     2
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   50
+
+ Verification being performed for class S
+ Accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1   0.1619634321098E-01 0.1619634321098E-01 0.2998964438740E-14
+           2   0.2197674516482E-02 0.2197674516482E-02 0.1359646828937E-12
+           3   0.1517992765340E-02 0.1517992765340E-02 0.2359829414002E-12
+           4   0.1502958443599E-02 0.1502958443599E-02 0.2178563602241E-13
+           5   0.3426407315590E-01 0.3426407315590E-01 0.8708025940479E-14
+ Comparison of RMS-norms of solution error
+           1   0.6422331995796E-03 0.6422331995796E-03 0.1688175219212E-14
+           2   0.8414434204735E-04 0.8414434204735E-04 0.5798262435090E-14
+           3   0.5858826961649E-04 0.5858826961649E-04 0.1734885743100E-14
+           4   0.5847422259516E-04 0.5847422259516E-04 0.1494911711129E-13
+           5   0.1310334791411E-02 0.1310334791411E-02 0.7612298820307E-14
+ Comparison of surface integral
+               0.7841892886594E+01 0.7841892886594E+01 0.0000000000000E+00
+ Verification Successful
+
+
+ LU Benchmark Completed.
+ Class           =                        S
+ Size            =             12x  12x  12
+ Iterations      =                       50
+ Time in seconds =                     0.02
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  5776.32
+ Mop/s/process   =                  2888.16
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- LU Benchmark
+
+ Size:  33x 33x 33
+ Iterations: 300
+ Number of processes:     2
+
+ Time step    1
+ Time step   20
+ Time step   40
+ Time step   60
+ Time step   80
+ Time step  100
+ Time step  120
+ Time step  140
+ Time step  160
+ Time step  180
+ Time step  200
+ Time step  220
+ Time step  240
+ Time step  260
+ Time step  280
+ Time step  300
+
+ Verification being performed for class W
+ Accuracy setting for epsilon =  0.1000000000000E-07
+ Comparison of RMS-norms of residual
+           1   0.1236511638192E+02 0.1236511638192E+02 0.1469628744751E-12
+           2   0.1317228477799E+01 0.1317228477799E+01 0.3786071976632E-12
+           3   0.2550120713095E+01 0.2550120713095E+01 0.9421211368355E-13
+           4   0.2326187750252E+01 0.2326187750252E+01 0.1851813266182E-12
+           5   0.2826799444189E+02 0.2826799444189E+02 0.1530779012170E-12
+ Comparison of RMS-norms of solution error
+           1   0.4867877144216E+00 0.4867877144216E+00 0.5040375530711E-13
+           2   0.5064652880982E-01 0.5064652880982E-01 0.9357530807619E-13
+           3   0.9281818101960E-01 0.9281818101960E-01 0.1689528931785E-13
+           4   0.8570126542733E-01 0.8570126542733E-01 0.7448877632977E-14
+           5   0.1084277417792E+01 0.1084277417792E+01 0.2553678770746E-12
+ Comparison of surface integral
+               0.1161399311023E+02 0.1161399311023E+02 0.3074289103934E-13
+ Verification Successful
+
+
+ LU Benchmark Completed.
+ Class           =                        W
+ Size            =             33x  33x  33
+ Iterations      =                      300
+ Time in seconds =                     2.84
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  6354.58
+ Mop/s/process   =                  3177.29
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = (none)
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- MG Benchmark
+
+ No input file. Using compiled defaults 
+ Size:  256x 256x 256  (class A)
+ Iterations:   4
+ Number of processes:     2
+
+ Initialization time:           0.389 seconds
+
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ L2 Norm is   0.243336530907E-05
+ Error is     0.693309172822E-16
+
+
+ MG Benchmark Completed.
+ Class           =                        A
+ Size            =            256x 256x 256
+ Iterations      =                        4
+ Time in seconds =                     0.72
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  5433.45
+ Mop/s/process   =                  2716.73
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- MG Benchmark
+
+ No input file. Using compiled defaults 
+ Size:  256x 256x 256  (class B)
+ Iterations:  20
+ Number of processes:     2
+
+ Initialization time:           0.546 seconds
+
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ L2 Norm is   0.180056440136E-05
+ Error is     0.351876544531E-16
+
+
+ MG Benchmark Completed.
+ Class           =                        B
+ Size            =            256x 256x 256
+ Iterations      =                       20
+ Time in seconds =                     3.33
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  5845.66
+ Mop/s/process   =                  2922.83
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- MG Benchmark
+
+ No input file. Using compiled defaults 
+ Size:  512x 512x 512  (class C)
+ Iterations:  20
+ Number of processes:     2
+
+ Initialization time:           3.332 seconds
+
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ L2 Norm is   0.570673228573E-06
+ Error is    -0.159772495059E-11
+
+
+ MG Benchmark Completed.
+ Class           =                        C
+ Size            =            512x 512x 512
+ Iterations      =                       20
+ Time in seconds =                    32.18
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  4838.63
+ Mop/s/process   =                  2419.32
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- MG Benchmark
+
+ No input file. Using compiled defaults 
+ Size:   32x  32x  32  (class S)
+ Iterations:   4
+ Number of processes:     2
+
+ Initialization time:           0.002 seconds
+
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ L2 Norm is   0.530770700573E-04
+ Error is     0.488229790797E-16
+
+
+ MG Benchmark Completed.
+ Class           =                        S
+ Size            =             32x  32x  32
+ Iterations      =                        4
+ Time in seconds =                     0.00
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  2068.63
+ Mop/s/process   =                  1034.31
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+
+
+
+ NAS Parallel Benchmarks 2.4 -- MG Benchmark
+
+ No input file. Using compiled defaults 
+ Size:   64x  64x  64  (class W)
+ Iterations:  40
+ Number of processes:     2
+
+ Initialization time:           0.010 seconds
+
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ L2 Norm is   0.250391406439E-17
+ Error is     0.930928025052E-25
+
+
+ MG Benchmark Completed.
+ Class           =                        W
+ Size            =             64x  64x  64
+ Iterations      =                       40
+ Time in seconds =                     0.10
+ Total processes =                        2
+ Compiled procs  =                        2
+ Mop/s total     =                  6389.58
+ Mop/s/process   =                  3194.79
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                      2.4
+ Compile date    =              04 May 2012
+
+ Compile options:
+    MPIF77       = mpif77
+    FLINK        = mpif77
+    FMPI_LIB     = -L/usr/local/lib -lmpi
+    FMPI_INC     = -I/usr/local/include
+    FFLAGS       = -O3 
+    FLINKFLAGS   = (none)
+    RAND         = randi8
+
+
+ Please send the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+ 
+ If email is not available, send this to:
+
+ MS T27A-1
+ NASA Ames Research Center
+ Moffett Field, CA  94035-1000
+
+ Fax: 650-604-3957
+
+

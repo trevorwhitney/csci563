@@ -1,0 +1,5 @@
+
+ ERROR: compiled for 2 processes
+ Number of active processes: 8
+ Exiting program!
+

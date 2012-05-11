@@ -1,0 +1,128 @@
+#!/bin/bash
+# bvargo
+
+# a script that, given a list of hosts, produces a file suitable for MPI
+# the script automatically figures out the number of physical cores in each
+# host and then orders the host in order of ascending load
+
+# fail fast for debugging
+#set -e
+
+# shows the usage
+usage()
+{
+   cat << EOF
+Usage: $0 [-f <file>]
+
+OPTIONS:
+   -f <file> -- the file containing a list of hosts to search at
+
+OUTPUT:
+   The script will output a file suitable for MPI, where the hosts are ordered
+   by ascending 5-minute load. If an error is encountered for any host, then
+   it is not included in the output file.
+EOF
+}
+
+# error handler, with optional message
+die ()
+{
+   if [[ "$#" -eq 1 ]]
+   then
+      echo "ERROR: $1" 1>&2
+   else
+      echo "ERROR: Unknown" 1>&2
+   fi
+   exit 1
+}
+
+# for -f
+hostsfile=""
+
+# timeout for ssh
+timeout=2
+
+# process the arguments
+# initial colon prevents getops from printing an error, as we have a usage
+# message that will be printed instead
+while getopts :hd:n:f: OPTION
+do
+   case $OPTION in
+      f)
+         hostsfile="$OPTARG"
+         ;;
+      ?)
+         usage
+         exit 1
+         ;;
+   esac
+done
+
+if [[ -z "$hostsfile" ]]
+then
+   # if the hosts file is not present, use the default list of hosts (alamode)
+   hosts="ch120-01.mines.edu
+ch120-02.mines.edu
+ch120-03.mines.edu
+ch120-04.mines.edu
+ch120-05.mines.edu
+ch120-06.mines.edu
+ch120-07.mines.edu
+ch120-08.mines.edu
+ch120-09.mines.edu
+ch120-10.mines.edu
+ch120-11.mines.edu
+ch120-12.mines.edu
+ch120-13.mines.edu
+ch120-14.mines.edu
+ch120-15.mines.edu
+ch120-16.mines.edu
+ch120-17.mines.edu
+ch120-18.mines.edu
+ch120-19.mines.edu
+ch120-20.mines.edu
+ch120-21.mines.edu
+ch120-22.mines.edu
+ch120-23.mines.edu"
+else
+   # use the hosts file as the list of hosts
+   hosts="$(cat $hostsfile | awk ' { print $1 } ')"
+fi
+
+# setup the command to run on the remote host
+# gets the 5-minute load average and the number of physical processors
+ssh_commands="cat /proc/loadavg | cut -d ' ' -f 2; \
+echo $(($(grep "physical id" /proc/cpuinfo | sort -u | wc -l)*$(grep "core id" /proc/cpuinfo | sort -u | wc -l)))"
+
+# host results
+hostresults=""
+
+# loop over each host
+for host in $hosts
+do
+   # get the information
+   # any errors are redirected to /dev/null
+   hostinfo=$(ssh -o ConnectTimeout=$timeout $host "$ssh_commands" 2> /dev/null)
+
+   # save the return code
+   return_code=$?
+
+   # load
+   load=$(echo $hostinfo | cut -d ' ' -f 1)
+   nprocs=$(echo $hostinfo | cut -d ' ' -f 2)
+
+   # if there was not an error, save the host information
+   if [[ $return_code -eq 0 ]]
+   then
+      hostline="$load $nprocs $host"
+
+      if [[ -n "$hostresults" ]]
+      then
+         hostresults="$hostresults\n$hostline"
+      else
+         hostresults="$hostline"
+      fi
+   fi
+done
+
+echo -e $hostresults | sort -n | cut -d ' ' -f 2- | awk ' NF >= 2 { print $2 " slots=" $1 } '
